@@ -10,7 +10,7 @@ export class AuthFacade {
   async signup(command: UserCommand) {
     // 1. 회원가입
     const userInfo = await this.authService.createUser(command);
-    // 회원가입 알림
+    // 2. 회원가입 알림
     setTimeout(() => console.log('회원가입이 완료되었습니다 : )', 3000));
     return userInfo;
   }
