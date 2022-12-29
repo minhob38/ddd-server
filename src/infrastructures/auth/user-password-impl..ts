@@ -7,6 +7,8 @@ export class UserPasswordImpl implements UserPassword {
     return true;
   }
   createHash(password: string): string {
+    // 1. bcrypt 방식
+    // 2. 다른 방식...
     return password;
   }
 }

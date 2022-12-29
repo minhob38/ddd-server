@@ -8,9 +8,10 @@ import { UserPasswordImpl } from './user-password-impl.';
 export class UserCreateImpl implements UserCreate {
   constructor(private readonly userPassword: UserPasswordImpl) {}
 
-  async save(userEntity: UserEntity): Promise<UserInfo> {
+  async save(userEntity: UserEntity): Promise<UserEntity> {
     const hash = this.userPassword.createHash(userEntity.getPassword());
+    const userEntity = this.userRepository.save();
     /* db 저장 */
-    return new UserInfo();
+    return userEntity;
   }
 }
